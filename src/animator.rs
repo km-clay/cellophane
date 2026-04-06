@@ -126,9 +126,11 @@ impl Animator {
 	}
 
 	/// Enter the alternate screen, enable raw mode, and hide the cursor.
+	/// Also initializes the animation with the frame from [`initial_frame`](Animation::initial_frame).
 	/// Terminal state is restored automatically when the `Animator` is dropped.
 	pub fn enter(&mut self) -> io::Result<()> {
 		let guard = RawModeGuard::enter();
+		self.animation.init(self.animation.initial_frame());
 		self.raw_mode_state = Some(guard?);
 		Ok(())
 	}

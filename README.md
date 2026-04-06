@@ -7,13 +7,13 @@ rendering pipeline with frame diffing, resize handling, and input forwarding.
 
 ## Features
 
-- **One trait** — implement `Animation` and you're done
-- **Frame diffing** — only changed cells are redrawn each frame
-- **ANSI parsing** — `FrameBuilder` parses ansi-styled text (including 24-bit color) into a cell grid via VTE
-- **Resize handling** — terminal resize events are detected and forwarded automatically
-- **Input forwarding** — key and mouse events are passed to your animation for interactive use
-- **Terminal lifecycle** — alternate screen, raw mode, cursor visibility, and cleanup on drop
-- **Unicode support** — `Grapheme` type handles multi-codepoint characters with stack allocation via `SmallVec`
+- **One trait** - implement `Animation` and you're done
+- **Frame diffing** - only changed cells are redrawn each frame
+- **ANSI parsing** - `FrameBuilder` parses ansi-styled text (including 24-bit color) into a cell grid via VTE
+- **Resize handling** - terminal resize events are detected and forwarded automatically
+- **Input forwarding** - key and mouse events are passed to your animation for interactive use
+- **Terminal lifecycle** - alternate screen, raw mode, cursor visibility, and cleanup on drop
+- **Unicode support** - `Grapheme` type handles multi-codepoint characters with stack allocation via `SmallVec`
 
 ## Quick start
 
@@ -105,4 +105,4 @@ The `Animator` manages the full terminal lifecycle:
 
 ## Built with cellophane
 
-- [whoa](https://github.com/km-clay/whoa) — a terminal screensaver featuring EarthBound battle backgrounds, procedural simulations, cellular automata, and more
+- [whoa](https://github.com/km-clay/whoa) - a terminal screensaver featuring EarthBound battle backgrounds, procedural simulations, cellular automata, and more

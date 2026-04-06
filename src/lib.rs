@@ -5,12 +5,12 @@
 //!
 //! ## Core types
 //!
-//! - [`Animation`] — the trait you implement to define an animation
-//! - [`Animator`] — drives your animation with a frame-rate-limited render loop
-//! - [`Frame`] — a grid of styled [`Cell`]s representing one frame of output
-//! - [`FrameBuilder`] — parses ANSI-escaped text into a `Frame`
-//! - [`Cell`] — a single terminal cell with character, colors, and attributes
-//! - [`Grapheme`] — a unicode grapheme cluster backed by `SmallVec<[char; 4]>`
+//! - [`Animation`] - the trait you implement to define an animation
+//! - [`Animator`] - drives your animation with a frame-rate-limited render loop
+//! - [`Frame`] - a grid of styled [`Cell`]s representing one frame of output
+//! - [`FrameBuilder`] - parses ANSI-escaped text into a `Frame`
+//! - [`Cell`] - a single terminal cell with character, colors, and attributes
+//! - [`Grapheme`] - a unicode grapheme cluster backed by `SmallVec<[char; 4]>`
 //!
 //! ## Quick start
 //!
