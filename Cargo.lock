@@ -109,7 +109,7 @@ dependencies = [
 
 [[package]]
 name = "cellophane"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "bitflags 2.11.0",
  "crossterm",

@@ -15,9 +15,14 @@ use crate::{CellFlags, frame::Frame};
 ///
 /// Terminal resize and input events are forwarded automatically by the `Animator`.
 pub trait Animation {
-  /// Initialize the animation with a starting frame.
-  /// Called once before the first [`update`](Animation::update).
-  fn init(&mut self, initial: Frame);
+  /// Initialize the animation. Internally calls [`init_with`](Animation::init_with) with the frame from [`initial_frame`](Animation::initial_frame).
+	/// Override [`initial_frame`](Animation::initial_frame) to customize the initial frame content.
+  fn init(&mut self) {
+		self.init_with(self.initial_frame());
+	}
+
+	/// Initialize the animation with a specific frame. By default, this is called by [`init`](Animation::init) with the frame from [`initial_frame`](Animation::initial_frame), but you can override it to customize the initialization process.
+	fn init_with(&mut self, initial: Frame);
 
   /// Produce the initial frame to pass to [`init`](Animation::init).
   /// Override this to seed the animation with custom content.
@@ -135,7 +140,7 @@ impl Animator {
   /// Terminal state is restored automatically when the `Animator` is dropped.
   pub fn enter(&mut self) -> io::Result<()> {
     let guard = RawModeGuard::enter();
-    self.animation.init(self.animation.initial_frame());
+    self.animation.init();
     self.raw_mode_state = Some(guard?);
     Ok(())
   }
