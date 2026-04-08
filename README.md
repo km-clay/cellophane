@@ -118,7 +118,7 @@ Here's an example using the `Block` widget:
 ```rust
 fn main() -> std::io::Result<()> {
 	let mut anim = SomeAnimation::new();
-	anim.init(anim.initial_frame());
+	anim.init();
 
 	ratatui::run(|terminal| {
 			loop {
